@@ -934,72 +934,82 @@ def background_loop(backup_folder, drive_letter):
 def main():
     """
     Main entry point for the backup self-purge system.
-    
-    In interactive mode: Prompts for folder selection and performs single cleanup
-    In background mode: Runs continuously, checking disk space every 60 minutes
+    Configured for public distribution with dynamic path selection.
     """
     try:
+        # File to store user preferences
+        CONFIG_FILE = "config.json"
+        
         logger.info("=" * 70)
         logger.info("Intelligent Backup Storage Management System - Self-Purge")
         logger.info(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         logger.info(f"Script location: {os.path.realpath(sys.argv[0])}")
-        logger.info(f"Dry-Run Mode: {DRY_RUN}")
-        logger.info(f"Background Mode: {RUN_IN_BACKGROUND}")
         logger.info("=" * 70)
         
-        # Add to Windows Startup on first run (if enabled)
+        # 1. Persistence: Register in Windows Startup if enabled
         if ENABLE_STARTUP_PERSISTENCE and not is_in_startup():
             logger.info("First run detected - attempting to add to Windows Startup...")
-            if add_to_windows_startup():
-                logger.info("Successfully registered for Windows Startup")
-            else:
-                logger.warning("Could not add to Windows Startup (may require admin rights)")
+            add_to_windows_startup()
         
-        # Attempt interactive folder selection
-        backup_folder, drive_letter = select_backup_folder()
-        
+        # 2. Dynamic Path Selection (Universal Logic)
+        backup_folder = None
+        drive_letter = None
+
+        # Check if user has already configured the paths
+        if os.path.exists(CONFIG_FILE):
+            try:
+                with open(CONFIG_FILE, 'r') as f:
+                    config = json.load(f)
+                    backup_folder = config.get('backup_folder')
+                    drive_letter = config.get('drive_letter')
+                logger.info(f"Configuration loaded: Monitoring {backup_folder}")
+            except Exception as e:
+                logger.error(f"Failed to load config file: {e}")
+
+        # If no config exists, prompt the user to select the folder manually
         if not backup_folder or not drive_letter:
-            error_msg = "No backup folder selected. Exiting."
-            logger.warning(error_msg)
-            return
-        
-        # Validate backup folder exists
+            logger.info("No configuration found. Launching directory selector...")
+            backup_folder, drive_letter = select_backup_folder()
+            
+            if backup_folder and drive_letter:
+                # Save the selection so it persists after reboot
+                try:
+                    with open(CONFIG_FILE, 'w') as f:
+                        json.dump({"backup_folder": backup_folder, "drive_letter": drive_letter}, f)
+                    logger.info(f"Successfully saved configuration to {CONFIG_FILE}")
+                except Exception as e:
+                    logger.warning(f"Could not save configuration file: {e}")
+            else:
+                logger.error("No folder selected. The program will exit.")
+                return
+
+        # 3. Validation and Initial Check
         if not os.path.exists(backup_folder):
-            error_msg = f"Backup folder not found: {backup_folder}"
-            logger.error(error_msg)
-            return
-        
-        # Check if drive is accessible
-        try:
-            disk_usage = psutil.disk_usage(drive_letter)
-            logger.info(f"Drive {drive_letter} is accessible ({disk_usage.total / (1024**3):.2f}GB total)")
-        except Exception as e:
-            error_msg = f"Cannot access drive {drive_letter}: {e}"
-            logger.error(error_msg)
-            return
-        
-        logger.info(f"Backup folder: {backup_folder}")
-        logger.info(f"Drive: {drive_letter}")
-        logger.info(f"Minimum free space: {MINIMUM_FREE_SPACE_GB}GB or {MINIMUM_FREE_SPACE_PERCENT}%")
-        logger.info(f"Safety buffer: {SAFETY_BUFFER_GB}GB")
-        
-        # Enter background loop if enabled
-        if RUN_IN_BACKGROUND:
-            logger.info("Entering background monitoring mode...")
-            background_loop(backup_folder, drive_letter)
+            logger.warning(f"Target path {backup_folder} is currently unavailable.")
         else:
-            logger.info("Running in single-cycle mode...")
-            cleanup_cycle(backup_folder, drive_letter)
+            try:
+                disk_usage = psutil.disk_usage(drive_letter)
+                logger.info(f"Drive {drive_letter} accessible: {disk_usage.total / (1024**3):.2f}GB total")
+            except Exception as e:
+                logger.error(f"Error checking drive {drive_letter}: {e}")
+
+        logger.info(f"Threshold: {MINIMUM_FREE_SPACE_GB}GB | Buffer: {SAFETY_BUFFER_GB}GB")
         
-        logger.info("=" * 70)
-        logger.info("Backup self-purge system terminated")
-        logger.info("=" * 70)
+        # 4. Continuous Background Monitoring Loop
+        logger.info("Entering background monitoring mode...")
         
+        while True:
+            try:
+                # Re-verify existence before each cycle (handles disconnected drives)
+                if os.path.exists(backup_folder):
+                    cleanup_cycle(backup_folder, drive_letter)
+                else:
+                    logger.warning(f"Waiting for {backup_folder} to become available...")
+            except Exception as e:
+                logger.error(f"Error during cleanup cycle: {e}")
+            
+            # Sleep for the specified interval (default 60 minutes)
+            time.sleep(CHECK_INTERVAL_MINUTES * 60)
+            
     except Exception as e:
-        logger.error(f"Critical error in main: {e}", exc_info=True)
-    finally:
-        logger.info("Program ended")
-
-
-if __name__ == "__main__":
-    main()
+        logger.error(f"Critical failure in main execution: {e}", exc_info=True)
