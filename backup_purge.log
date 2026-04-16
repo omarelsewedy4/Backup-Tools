@@ -1,0 +1,110 @@
+2026-04-16 22:26:49 - INFO - ======================================================================
+2026-04-16 22:26:49 - INFO - Backup self-purge system started (Interactive Mode)
+2026-04-16 22:26:49 - INFO - ======================================================================
+2026-04-16 22:26:54 - INFO - User selected backup folder: S:/
+2026-04-16 22:26:54 - INFO - Detected drive letter: S:
+2026-04-16 22:26:54 - INFO - Drive S: is accessible
+2026-04-16 22:26:54 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:26:56 - INFO - Starting cleanup process (DRY_RUN=False)
+2026-04-16 22:26:56 - INFO - ======================================================================
+2026-04-16 22:26:56 - INFO - Starting cleanup process - DRY RUN: False
+2026-04-16 22:26:56 - INFO - Priority Folders: ['ANIME']
+2026-04-16 22:26:56 - INFO - Whitelisted Items: 2
+2026-04-16 22:26:56 - INFO - ======================================================================
+2026-04-16 22:26:56 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:26:56 - INFO - Free space: 13.94GB | Required: 29.81GB + 5.00GB buffer
+2026-04-16 22:26:56 - INFO - Space is below threshold - Starting cleanup
+2026-04-16 22:26:56 - INFO - Target free space: 34.81GB
+2026-04-16 22:26:56 - INFO - STEP 1: Cleaning priority folders: ['ANIME']
+2026-04-16 22:26:56 - INFO - Scanning priority folder: ANIME
+2026-04-16 22:26:56 - INFO - Found 22 items in priority folders
+2026-04-16 22:26:56 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:26:56 - INFO - Processing (PRIORITY): KIJIN GENTOUSHOU (Created: 2025-03-29 05:46:21, Size: 7.14GB)
+2026-04-16 22:33:29 - INFO - ======================================================================
+2026-04-16 22:33:29 - INFO - Backup self-purge system started (Interactive Mode)
+2026-04-16 22:33:29 - INFO - ======================================================================
+2026-04-16 22:33:35 - INFO - User selected backup folder: S:/
+2026-04-16 22:33:35 - INFO - Detected drive letter: S:
+2026-04-16 22:33:35 - INFO - Drive S: is accessible
+2026-04-16 22:33:35 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:33:36 - INFO - Starting cleanup process (DRY_RUN=False)
+2026-04-16 22:33:36 - INFO - ======================================================================
+2026-04-16 22:33:36 - INFO - Starting cleanup process - DRY RUN: False
+2026-04-16 22:33:36 - INFO - Priority Folders: ['ANIME']
+2026-04-16 22:33:36 - INFO - Whitelisted Items: 2
+2026-04-16 22:33:36 - INFO - ======================================================================
+2026-04-16 22:33:36 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:33:36 - INFO - Free space: 13.94GB | Required: 29.81GB + 5.00GB buffer
+2026-04-16 22:33:36 - INFO - Space is below threshold - Starting cleanup
+2026-04-16 22:33:36 - INFO - Target free space: 34.81GB
+2026-04-16 22:33:36 - INFO - STEP 1: Cleaning priority folders: ['ANIME']
+2026-04-16 22:33:36 - INFO - Scanning priority folder: ANIME
+2026-04-16 22:33:36 - INFO - Found 22 items in priority folders
+2026-04-16 22:33:36 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:33:36 - INFO - Processing (PRIORITY): KIJIN GENTOUSHOU (Created: 2025-03-29 05:46:21, Size: 7.14GB)
+2026-04-16 22:49:13 - INFO - ======================================================================
+2026-04-16 22:49:13 - INFO - Backup self-purge system started (Interactive Mode)
+2026-04-16 22:49:13 - INFO - ======================================================================
+2026-04-16 22:49:19 - INFO - User selected backup folder: S:/
+2026-04-16 22:49:19 - INFO - Detected drive letter: S:
+2026-04-16 22:49:19 - INFO - Drive S: is accessible
+2026-04-16 22:49:19 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:49:22 - INFO - Starting cleanup process (DRY_RUN=False)
+2026-04-16 22:49:22 - INFO - ======================================================================
+2026-04-16 22:49:22 - INFO - Starting cleanup process - DRY RUN: False
+2026-04-16 22:49:22 - INFO - Priority Folders: ['ANIME']
+2026-04-16 22:49:22 - INFO - Whitelisted Items: 2
+2026-04-16 22:49:22 - INFO - ======================================================================
+2026-04-16 22:49:22 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:49:22 - INFO - Free space: 13.94GB | Required: 29.81GB + 5.00GB buffer
+2026-04-16 22:49:22 - INFO - Space is below threshold - Starting cleanup
+2026-04-16 22:49:22 - INFO - Target free space: 34.81GB
+2026-04-16 22:49:22 - INFO - STEP 1: Cleaning priority folders: ['ANIME']
+2026-04-16 22:49:22 - INFO - Scanning priority folder: ANIME
+2026-04-16 22:49:22 - INFO - Found 22 items in priority folders
+2026-04-16 22:49:22 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 22:49:22 - INFO - Processing (PRIORITY): KIJIN GENTOUSHOU (Created: 2025-03-29 05:46:21, Size: 7.14GB)
+2026-04-16 23:09:28 - INFO - ======================================================================
+2026-04-16 23:09:28 - INFO - Backup self-purge system started (Interactive Mode)
+2026-04-16 23:09:28 - INFO - ======================================================================
+2026-04-16 23:09:34 - INFO - User selected backup folder: S:/
+2026-04-16 23:09:34 - INFO - Detected drive letter: S:
+2026-04-16 23:09:34 - INFO - Drive S: is accessible
+2026-04-16 23:09:34 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 23:09:36 - INFO - Starting cleanup process (DRY_RUN=False)
+2026-04-16 23:09:36 - INFO - ======================================================================
+2026-04-16 23:09:36 - INFO - Starting cleanup process - DRY RUN: False
+2026-04-16 23:09:36 - INFO - Priority Folders: ['ANIME']
+2026-04-16 23:09:36 - INFO - Whitelisted Items: 2
+2026-04-16 23:09:36 - INFO - ======================================================================
+2026-04-16 23:09:36 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 23:09:36 - INFO - Free space: 13.94GB | Required: 29.81GB + 5.00GB buffer
+2026-04-16 23:09:36 - INFO - Space is below threshold - Starting cleanup
+2026-04-16 23:09:36 - INFO - Target free space: 34.81GB
+2026-04-16 23:09:36 - INFO - STEP 1: Cleaning priority folders: ['ANIME']
+2026-04-16 23:09:36 - INFO - Scanning priority folder: ANIME
+2026-04-16 23:09:36 - INFO - Found 22 items in priority folders
+2026-04-16 23:09:36 - INFO - Disk Status: 13.94GB free (4.7%) | Threshold: 29.81GB
+2026-04-16 23:09:36 - INFO - Processing (PRIORITY): KIJIN GENTOUSHOU (Created: 2025-03-29 05:46:21, Size: 7.14GB)
+2026-04-16 23:09:37 - INFO - Deleted folder: KIJIN GENTOUSHOU (7.14GB)
+2026-04-16 23:09:37 - INFO - Disk Status: 21.08GB free (7.1%) | Threshold: 29.81GB
+2026-04-16 23:09:37 - INFO - Processing (PRIORITY): CHIYU MAHOU NO MATCHIGATTA (Created: 2025-06-27 01:28:26, Size: 6.23GB)
+2026-04-16 23:09:37 - INFO - Deleted folder: CHIYU MAHOU NO MATCHIGATTA (6.23GB)
+2026-04-16 23:09:37 - INFO - Disk Status: 27.31GB free (9.2%) | Threshold: 29.81GB
+2026-04-16 23:09:37 - INFO - Processing (PRIORITY): NINJA KAMUI (Created: 2025-06-28 13:42:02, Size: 4.20GB)
+2026-04-16 23:09:37 - INFO - Deleted folder: NINJA KAMUI (4.20GB)
+2026-04-16 23:09:37 - INFO - Disk Status: 31.51GB free (10.6%) | Threshold: 29.81GB
+2026-04-16 23:09:37 - INFO - Target space reached during priority cleanup: 31.51GB free (Target: 34.81GB)
+2026-04-16 23:09:37 - INFO - ======================================================================
+2026-04-16 23:09:37 - INFO - Cleanup Summary:
+2026-04-16 23:09:37 - INFO -   Items Deleted: 3
+2026-04-16 23:09:37 - INFO -   Items Skipped: 0
+2026-04-16 23:09:37 - INFO -   Space Freed: 17.57GB
+2026-04-16 23:09:37 - INFO -   Whitelisted Items Protected: 2
+2026-04-16 23:09:37 - INFO - Disk Status: 31.51GB free (10.6%) | Threshold: 29.81GB
+2026-04-16 23:09:37 - INFO -   Final Free Space: 31.51GB
+2026-04-16 23:09:37 - INFO -   Status: SUCCESS
+2026-04-16 23:09:37 - INFO - ======================================================================
+2026-04-16 23:09:41 - INFO - Cleanup completed - Stats: {'items_deleted': 3, 'space_freed_gb': 17.572107191197574, 'items_skipped': 0, 'cleanup_successful': True, 'whitelisted_protected': 0}
+2026-04-16 23:09:41 - INFO - Backup self-purge system completed successfully
+2026-04-16 23:09:41 - INFO - ======================================================================

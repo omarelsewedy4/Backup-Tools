@@ -1,0 +1,4 @@
+# Requirements for Intelligent Backup Storage Management System
+# Install with: pip install -r requirements.txt
+
+psutil>=5.8.0  # For disk usage monitoring (cross-platform)
